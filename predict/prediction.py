@@ -1,4 +1,7 @@
 import numpy
+import joblib
+
+
 
 ******
 {
@@ -26,6 +29,10 @@ import numpy
 
 ******
 
-def preprocessing(data):
-    pass
-    return X_predict
+def predict(X_predict):
+  
+  with open("/home/jack/challenge-api-deployment/model/immoElisa.pkl", "rb") as f:
+    model = joblib.load(f)
+    
+  y_predict = model.predict(X_predict)
+  return y_predict
