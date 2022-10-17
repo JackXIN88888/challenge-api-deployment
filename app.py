@@ -11,15 +11,18 @@ app = FastAPI()
 #         raise HTTPException(status_code=444, detail="Item not found")
 #     return {"item": items[item_id]}
 
+
 @app.get("/")
-async def server_status():
-    if pass:
-        return "alive"
-    
-    
-    
+async def root():
+    """Route that return 'Alive!' if the server runs."""
+    return {"Status": "Alive!"}
+
+
 @app.get("/predict")
 async def s():
     pass
 
 
+@app.post("/predict")
+async def s():
+    pass
