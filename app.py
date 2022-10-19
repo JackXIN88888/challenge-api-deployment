@@ -50,7 +50,7 @@ async def showing():
     return "please send a json format house data"
 
 
-@app.post("/predict/data/", status_code=201)
+@app.post("/predict", status_code=201)
 async def predicting(data: Data1):
     print(data)
     print(type(data))
