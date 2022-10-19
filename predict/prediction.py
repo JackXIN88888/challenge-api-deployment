@@ -5,7 +5,7 @@ import joblib
 
 def predict(X_predict: array):
 
-    with open("./immoElisa.pkl", "rb") as f:
+    with open("immoElisa.pkl", "rb") as f:
         model = joblib.load(f)
 
     y_predict = model.predict(X_predict)
