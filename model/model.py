@@ -1,8 +1,10 @@
 import pandas as pd
-from matplotlib import pyplot as plt
+
+# from matplotlib import pyplot as plt
 import numpy as np
 from scipy import stats
-import seaborn as sns
+
+# import seaborn as sns
 
 df = pd.read_csv("all_data_cleaned.csv")
 
@@ -17,10 +19,10 @@ df = df.replace("AS_NEW", 6)
 df["state"].value_counts()
 
 
-plt.figure(figsize=(15, 8))
-sns.set_theme(style="white")
-corr = df.corr()
-sns.heatmap(corr, annot=True, cmap="coolwarm", fmt=".1g")
+# plt.figure(figsize=(15, 8))
+# sns.set_theme(style="white")
+# corr = df.corr()
+# sns.heatmap(corr, annot=True, cmap="coolwarm", fmt=".1g")
 
 
 df = df.drop(["garden_area"], axis=1)
