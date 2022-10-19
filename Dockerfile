@@ -14,7 +14,7 @@ COPY . /app
 RUN pip install --upgrade pip
 
 # Install dependencies from "requirements.txt"
-RUN pip install -r requirements.txt
+RUN pip install -r requirement.txt
 
 # Run the app
 # Set host to 0.0.0.0 to make it run on the container network
