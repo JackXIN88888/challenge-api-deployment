@@ -1,11 +1,11 @@
 {
     "data": {
         "area": 100,
-        "property-type": "APARTMENT",
-        "rooms-number": 3,
-        "zip-code": 1180,
-        "land-area": 0,
-        "swimming-pool": true,
-        "building-state": "TO REBUILD"
+        "property_type": "APARTMENT",
+        "rooms_number": 3,
+        "zip_code": 1180,
+        "land_area": 0,
+        "swimming_pool": true,
+        "building_state": "TO REBUILD"
     }
 }

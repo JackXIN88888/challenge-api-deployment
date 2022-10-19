@@ -5,16 +5,17 @@ import json
 
 with open("./challenge-api-deployment/input.json", "r") as file:
     data = json.load(file)
-print(data)
-print(data["data"])
+    data = data["data"]
+# print(data)
+# print(data["data"])
 
 
 def preprocessing(data):
 
-    state_of_building = data["data"]["building-state"]
-    bedrooms = data["data"]["rooms-number"]
-    area = data["data"]["area"]
-    swimming_pool = data["data"]["swimming-pool"]
+    state_of_building = data["building_state"]
+    bedrooms = data["rooms_number"]
+    area = data["area"]
+    swimming_pool = data["swimming_pool"]
     list1 = [state_of_building, bedrooms, area, swimming_pool]
     df = pd.DataFrame(list1)
 
@@ -31,10 +32,13 @@ def preprocessing(data):
 
     df_no_Nan = df.dropna(axis=0, how="any")
 
-    ndarray_immoElisa = df_no_Nan.values
+    # ndarray_immoElisa = df_no_Nan.values
+    # X_predict = ndarray_immoElisa.reshape(1, 4)
 
-    X_predict = ndarray_immoElisa.reshape(1, 4)
+    X_predict = [list(df_no_Nan.loc[:, 0])]
+
     print(X_predict)
+    print(type(X_predict))
     return X_predict
 
 

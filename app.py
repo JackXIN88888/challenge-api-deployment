@@ -1,4 +1,10 @@
 from fastapi import FastAPI, HTTPException
+import uvicorn
+from predict.prediction import predict
+from preprocessing.cleaning_data import preprocessing
+from pydantic import BaseModel
+from fastapi.responses import JSONResponse
+from fastapi.encoders import jsonable_encoder
 
 app = FastAPI()
 
@@ -12,6 +18,26 @@ app = FastAPI()
 #     return {"item": items[item_id]}
 
 
+class Data1(BaseModel):
+
+    area: int | None = 0
+    property_type: str
+    rooms_number: int | None = 0
+    zip_code: int | None = 0
+    land_area: int | None = 0
+    garden: bool | None = False
+    garden_area: int | None = 0
+    equipped_kitchen: bool | None = False
+    full_address: str | None = False
+    swimming_pool: bool | None = False
+    furnished: bool | None = False
+    open_fire: bool | None = False
+    terrace: bool | None = False
+    terrace_area: int | None = 0
+    facades_number: int | None = 0
+    building_state: str | None = 0
+
+
 @app.get("/")
 async def root():
     """Route that return 'Alive!' if the server runs."""
@@ -19,10 +45,24 @@ async def root():
 
 
 @app.get("/predict")
-async def s():
-    pass
+async def showing():
+    return "please send a json format house data"
 
 
-@app.post("/predict")
-async def s():
-    pass
+@app.post("/predict/data/", status_code=201)
+async def predicting(data: Data1):
+    print(data)
+    print(type(data))
+    data = data.dict()
+    data = preprocessing(data)
+
+    final_predict = predict(data)
+    print(final_predict)
+    return {"prediction": final_predict}
+
+    # json_compatible_item_data = jsonable_encoder(data)
+    # return JSONResponse(content=json_compatible_item_data)
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="127.0.0.1", port=8000)
