@@ -1,32 +1,23 @@
-# challenge-regression
+# challenge-api-deployment
 
-Next step in the Immo Eliza challenge project, this specific challenge deals with linear regression and preprocessing of data for machine learning.
+## Description
 
-1. Data cleaning
 
-2. Data formatting
-
-3. Model selection
-
-4. Applying your model
-
-5. Model evaluation
 
 
 
 ## Installation
 
+None for Users as it's AN API
 
 ## Usage
 
+To use my machine-learning model to predict the price of one real estate property
 
 ## (Visuals)
 
 
 ## Contributors
-OlivierDT
-
-NguyenDucTranNhu
 
 jackXIN88888
 

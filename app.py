@@ -3,8 +3,9 @@ import uvicorn
 from predict.prediction import predict
 from preprocessing.cleaning_data import preprocessing
 from pydantic import BaseModel
-from fastapi.responses import JSONResponse
-from fastapi.encoders import jsonable_encoder
+
+# from fastapi.responses import JSONResponse
+# from fastapi.encoders import jsonable_encoder
 
 app = FastAPI()
 
