@@ -3,9 +3,9 @@ import pandas as pd
 import json
 
 
-with open("./challenge-api-deployment/input.json", "r") as file:
-    data = json.load(file)
-    data = data["data"]
+# with open("./input.json", "r") as file:
+#     data = json.load(file)
+#     data = data["data"]
 # print(data)
 # print(data["data"])
 
@@ -42,4 +42,4 @@ def preprocessing(data):
     return X_predict
 
 
-preprocessing(data)
+# preprocessing(data)
