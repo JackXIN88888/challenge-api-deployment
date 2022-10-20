@@ -1,12 +1,11 @@
 from array import array
 import numpy
 import joblib
-import sys
 
 
 def predict(X_predict: array):
 
-    with open("immoElisa.pkl", "rb") as f:
+    with open("predict/immoElisa.pkl", "rb") as f:
         model = joblib.load(f)
 
     y_predict = model.predict(X_predict)
@@ -15,6 +14,6 @@ def predict(X_predict: array):
     return y_predict
 
 
-x = predict([[2, 3, 100, 1]])
-print(x)
-print(type(x))
+# x = predict([[2, 3, 100, 1]])
+# print(x)
+# print(type(x))
