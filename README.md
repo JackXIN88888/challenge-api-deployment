@@ -2,7 +2,7 @@
 
 ## Description
 
-
+Use the model that is trained to predict a price for a new property and wrap it into an api, used fastapi and render to display it.
 
 
 

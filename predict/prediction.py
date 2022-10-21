@@ -5,7 +5,8 @@ import joblib
 
 def predict(X_predict: array):
 
-    with open("predict/immoElisa.pkl", "rb") as f:
+    # with open("immoElisa.pkl", "rb") as f:  # working for python and fastAPI
+    with open("predict/immoElisa.pkl", "rb") as f:  # working for render with dockerfile
         model = joblib.load(f)
 
     y_predict = model.predict(X_predict)

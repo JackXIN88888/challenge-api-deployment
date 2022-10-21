@@ -39,35 +39,36 @@ class Data1(BaseModel):
     building_state: str | None = 0
 
 
-x = predict([[2, 3, 100, 1]])
-print(x)
-print(type(x))
-
-# @app.get("/")
-# async def root():
-#     """Route that return 'Alive!' if the server runs."""
-#     return {"Status": "Alive!"}
+# x = predict([[2, 3, 100, 1]])
+# print(x)
+# print(type(x))
 
 
-# @app.get("/predict")
-# async def showing():
-#     return "please send a json format house data"
+@app.get("/")
+async def root():
+    """Route that return 'Alive!' if the server runs."""
+    return {"Status": "Alive!"}
 
 
-# @app.post("/predict", status_code=201)
-# async def predicting(data: Data1):
-#     print(data)
-#     print(type(data))
-#     data = data.dict()
-#     data = preprocessing(data)
-
-#     final_predict = predict(data)
-#     print(final_predict)
-#     return {"prediction": final_predict}
-
-#     # json_compatible_item_data = jsonable_encoder(data)
-#     # return JSONResponse(content=json_compatible_item_data)
+@app.get("/predict")
+async def showing():
+    return "please send a json format house data"
 
 
-# if __name__ == "__main__":
-#     uvicorn.run(app, host="127.0.0.1", port=8000)
+@app.post("/predict", status_code=201)
+async def predicting(data: Data1):
+    print(data)
+    print(type(data))
+    data = data.dict()
+    data = preprocessing(data)
+
+    final_predict = predict(data)
+    print(final_predict)
+    return {"prediction": final_predict}
+
+    # json_compatible_item_data = jsonable_encoder(data)
+    # return JSONResponse(content=json_compatible_item_data)
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="127.0.0.1", port=8000)
